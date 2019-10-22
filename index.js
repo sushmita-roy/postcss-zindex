@@ -7,7 +7,7 @@ module.exports = postcss.plugin('postcss-zindex', function (opts) {
     return function (css) {
         var cache = require('./lib/layerCache')(opts);
         var nodes = [];
-        var abort = false;
+        var abort = true;
         // First pass; cache all z indexes
         css.walkDecls('z-index', function (decl) {
             // Check that no negative values exist. Rebasing is only
